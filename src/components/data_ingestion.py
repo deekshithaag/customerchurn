@@ -28,9 +28,9 @@ class DataIngestion:
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
             logging.info('Train test split initiated')
             df.columns=['CIF','CUS_DOB','AGE','CUS_Month_Income','CUS_Gender','CUS_Marital_Status','CUS_Customer_Since','YEARS_WITH_US','debit_trans_S1','debit_trans_S2','debit_trans_S3','debit_amount_S1','debit_amount_S2','debit_amount_S3','credit_trans_S1','credit_trans_S2','credit_trans_S3','credit_amount_S1','credit_amount_S2','credit_amount_S3','total_debit_amount','total_debit_transactions','total_credit_amount','total_credit_transactions','total_transactions','CUS_Target','TAR_Desc','Status']
-            df.drop(['CIF','CUS_DOB','CUS_Customer_Since'],axis=1,inplace=True)
+            df.drop(['CIF','CUS_DOB','CUS_Customer_Since','CUS_Target'],axis=1,inplace=True)
             df.drop(['debit_trans_S1','debit_trans_S2','debit_trans_S3','debit_amount_S1','debit_amount_S2','debit_amount_S3','credit_trans_S1','credit_trans_S2','credit_trans_S3','credit_amount_S1','credit_amount_S2','credit_amount_S3'],axis=1,inplace=True)
-            df['CUS_Target']=df['CUS_Target'].astype(object)
+            #df['CUS_Target']=df['CUS_Target'].astype(object)
             df['total_amount']=df['total_credit_amount']-df['total_debit_amount']
             df['Status']=df['Status'].map({'ACTIVE':0,'CHURN':1})
             train_set,test_set=train_test_split(df,test_size=0.2,random_state=42)

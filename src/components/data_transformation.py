@@ -21,7 +21,7 @@ class DataTransformation:
     def get_data_transformer_object(self):
         try:
             numerical_columns=['AGE','CUS_Month_Income','YEARS_WITH_US','total_debit_amount','total_debit_transactions','total_credit_amount','total_credit_transactions','total_transactions','total_amount']
-            categorical_columns=['CUS_Gender','CUS_Marital_Status','CUS_Target','TAR_Desc']
+            categorical_columns=['CUS_Gender','CUS_Marital_Status','TAR_Desc']
             num_pipeline= Pipeline(
                 steps=[
                 ("imputer",SimpleImputer(strategy="median")),

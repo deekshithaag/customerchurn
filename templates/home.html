@@ -1,0 +1,167 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Customer Churn prediction</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Customer Churn prediction</legend>
+        </h1>
+        
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input class="form-control" type="number" name="AGE"
+                placeholder="Enter your AGE" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">CUS_Month_Income</label>
+            <input class="form-control" type="number" name="CUS_Month_Income"
+                placeholder="Enter your CUS_Month_Income" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">CUS_Gender</label>
+            <select class="form-control" name="CUS_Gender" placeholder="Enter you CUS_Gender" required>
+                <option class="placeholder" selected disabled value="">Select your CUS_Gender</option>
+                <option value="MALE">
+                    MALE
+                </option>
+                <option value="FEMALE">
+                    FEMALE
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">CUS_Marital_Status</label>
+            <select class="form-control" name="CUS_Marital_Status" placeholder="Enter you CUS_Marital_Status" required>
+                <option class="placeholder" selected disabled value="">Select CUS_Marital_Status</option>
+                <option value="MARRIED">
+                    MARRIED
+                </option>
+                <option value="SINGLE">
+                    SINGLE
+                </option>
+                <option value="WIDOWED">
+                    WIDOWED
+                </option>
+                <option value="DIVORCE">
+                    DIVORCE
+                </option>
+                <option value="OTHER">
+                    OTHER
+                </option>
+                <option value="PARTNER">
+                    PARTNER
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">YEARS_WITH_US</label>
+            <input class="form-control" type="number" name="YEARS_WITH_US"
+                placeholder="Enter your YEARS_WITH_US" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">total_debit_amount</label>
+            <input class="form-control" type="number" name="total_debit_amount"
+                placeholder="Enter your total_debit_amount" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">total_debit_transactions</label>
+            <input class="form-control" type="number" name="total_debit_transactions"
+                placeholder="Enter your total_debit_transactions" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">total_credit_amount</label>
+            <input class="form-control" type="number" name="total_credit_amount"
+                placeholder="Enter your total_credit_amount" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">total_credit_transactions</label>
+            <input class="form-control" type="number" name="total_credit_transactions"
+                placeholder="Enter your total_credit_transactions" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">total_transactions</label>
+            <input class="form-control" type="number" name="total_transactions"
+                placeholder="Enter your total_transactions" />
+        </div>
+<!---
+        <div class="mb-3">
+            <label class="form-label">CUS_Target</label>
+            <select class="form-control" name="CUS_Target"
+                placeholder="Enter you CUS_Target" required>
+                <option class="placeholder" selected disabled value="">Select CUS_Target</option>
+                <option value="2231">
+                    2231
+                </option>
+                <option value="2223">
+                    2223
+                </option>
+                <option value="2222">
+                    2222
+                </option>
+                <option value="2235">
+                    2235
+                </option>
+                <option value="2212">
+                    2212
+                </option>
+                <option value="2232">
+                    2232
+                </option>
+                <option value="2230">
+                    2230
+                </option>
+                <option value="2211">
+                    2211
+                </option>
+                <option value="2234">
+                    2234
+                </option>
+                <option value="2224">
+                    2224
+                </option>
+                <option value="2233">
+                    2233
+                </option>
+                <option value="2236">
+                    2236
+                </option>
+                
+            </select>
+        </div>
+
+    -->
+
+        <div class="mb-3">
+            <label class="form-label">TAR_Desc</label>
+            <select class="form-control" name="TAR_Desc" placeholder="Enter you TAR_Desc" required>
+                <option class="placeholder" selected disabled value="">Select TAR_Desc</option>
+                <option value="EXECUTIVE">
+                    EXECUTIVE
+                </option>
+                <option value="LOW">
+                    LOW
+                </option>
+                <option value="MIDLE">
+                    MIDLE
+                </option>
+                <option value="PLATINUM">
+                    PLATINUM
+                </option>
+            </select>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">total_amount</label>
+            <input class="form-control" type="number" name="total_amount"
+                placeholder="Enter your total_amount" />
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict churn" required />
+        </div>
+    </form>
+    <h2>
+       THE  prediction is {{results}}
+    </h2>
+   <body>
+</html>
