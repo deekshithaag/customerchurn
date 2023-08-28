@@ -1,4 +1,9 @@
 pandas
 numpy
 seaborn
+matplotlib
+openpyxl
+scikit-learn
+xgboost
+lightgbm
 -e .
