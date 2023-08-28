@@ -6,4 +6,5 @@ openpyxl
 scikit-learn
 xgboost
 lightgbm
+dill
 -e .
