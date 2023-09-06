@@ -5,7 +5,6 @@ matplotlib
 openpyxl
 scikit-learn
 xgboost
-lightgbm
 dill
 flask
 -e .
